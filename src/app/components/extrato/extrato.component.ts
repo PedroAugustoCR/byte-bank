@@ -14,9 +14,10 @@ export class ExtratoComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.todas().subscribe((transfrencias: Transferencia[]) => {
-      console.table(transfrencias);
       this.transferencias = transfrencias;
-    });
+    },
+      error => console.log(error)
+    );
   }
 
 }
